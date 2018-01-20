@@ -7,7 +7,7 @@ $(document).ready(function(){
   var defaultText = 0;
   var decimalPresent = false;
   var lastButton = accumulator.slice(-1);
-  var symbols = ["-", "+", "x", "÷"];
+  var symbols = ["-", "+", "x", "/"];
   $("#result").text(defaultText);
   $("#accumulator").text(defaultText);
 
@@ -94,7 +94,7 @@ $(document).ready(function(){
   })//end ce
 
   var calculateInput = function(string) {
-    var symbolsRegex = /[+,\-,÷,x]/g;
+    var symbolsRegex = /[+,\-,/,x]/g;
     var numbers = string.split(symbolsRegex);
     var symbols = string.match(/[^\d.]+/g)
     var result = parseFloat(numbers[0]);
@@ -106,7 +106,7 @@ $(document).ready(function(){
           result += number;
         } else if (symbols[j] == "-") {
           result -= number;
-        } else if (symbols[j] == "÷") {
+        } else if (symbols[j] == "/") {
           result /= number;
         } else if (symbols[j] == "x") {
           result *= number;
