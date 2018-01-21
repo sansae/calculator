@@ -41,7 +41,7 @@ $(document).ready(function(){
     }
 
     $("#accumulator").text(accumulator);
-  });//end #buttons
+  });
 
   $("#ac").click(function() {
     defaultText = 0;
@@ -50,7 +50,7 @@ $(document).ready(function(){
     $("#result").text(defaultText);
     $("#accumulator").text(defaultText);
     decimalPresent = false;
-  })
+  });
 
   var getLastNumber = function(accum) {
     var accumArr = accum.split("");
@@ -91,7 +91,7 @@ $(document).ready(function(){
       $("#result").text(defaultText);
       $("#accumulator").text(defaultText);
     }
-  })//end ce
+  });
 
   var calculateInput = function(string) {
     var symbolsRegex = /[+,\-,/,x]/g;
@@ -116,12 +116,12 @@ $(document).ready(function(){
       }
     }
     return parseFloat(result.toFixed(9));
-  };//end calculateInput()
+  };
 
   $("#equals").click(function() {
     result = calculateInput(accumulator);
     $("#result").text(result);
     $("#accumulator").text(result);
     accumulator = result;
-  })
+  });
 });
